@@ -40,11 +40,20 @@ p {
   font-size: 18px;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 40px;
+  width: fit-content;
 }
 
 button {
@@ -62,4 +71,27 @@ button:hover {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: inset 1px 2px 5px black;
+}
+
+/* Scoped */
+div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+input {
+  height: 40px;
+  font-size: 30px;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+label {
+  font-size: 20px;
+}
+
+.wrong {
+  background-color: lightcoral;
 }
