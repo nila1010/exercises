@@ -1,4 +1,4 @@
-let value = 100;
+let value = 200;
 
 function momsBeregner(parm1, moms = 25) {
   const medMoms = (parm1 * moms) / 100 + value;
