@@ -45,11 +45,9 @@ function startSpil() {
     $("#userinput").classList.add("fail");
     compGuessText.textContent = "Tallet skal være mellem 1 og 100";
   } else if (compGuess < userGuess) {
-    console.log(compGuess);
     btnHigher.addEventListener("click", higherClick);
   } else if (compGuess > userGuess) {
     btnLower.addEventListener("click", lowerClick);
-    console.log(compGuess);
   } else {
     btnGuessed.addEventListener("click", () => {
       compGuessText.textContent = "I AM AWESOME JEG BRUGTE " + count + " GÆT";
