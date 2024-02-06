@@ -41,7 +41,7 @@ function lowerClick() {
 function startSpil() {
   const userGuess = parseInt($("#userinput").value);
   compGuessText.textContent = "Computer gætter " + compGuess;
-  if (userGuess < 1 || userGuess > 100 || userGuess == NaN) {
+  if (userGuess < 1 || userGuess > 100 || $("#userinput").value == "") {
     $("#userinput").classList.add("fail");
     compGuessText.textContent = "Tallet skal være mellem 1 og 100";
   } else if (compGuess < userGuess) {
