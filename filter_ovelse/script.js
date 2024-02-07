@@ -15,13 +15,6 @@ const vehicles = [
 
 const ulPointer = $("ul");
 
-//showTheseVehicles(vehicles);
-
-const electric = vehicles.filter((vehicle) => vehicle.isElectric);
-const twoseats = vehicles.filter((vehicle) => vehicle.passengers > 1);
-const electricaljonas = vehicles.filter((vehicle) => vehicle.isElectric && vehicle.ownedBy === "Jonas");
-const rugbrod = vehicles.filter((vehicle) => vehicle.fuel === "Rugbrød" && vehicle.passengers > 1);
-
 function showTheseVehicles(arr) {
   ulPointer.innerHTML += "<li><strong>Type</strong></li>";
   ulPointer.innerHTML += "<li><strong>Fuel</strong></li>";
@@ -31,11 +24,11 @@ function showTheseVehicles(arr) {
   ulPointer.innerHTML += "<li><strong>Electric</strong></li>";
   ulPointer.innerHTML += "<li><strong>Tandem</strong></li>";
   arr.forEach((each) => {
-    ulPointer.innerHTML += `<li>${each.type}</li>`;
-    ulPointer.innerHTML += `<li>${each.fuel !== undefined ? each.fuel : "Ikke opgivet"}</li>`;
+    ulPointer.innerHTML += `<li >${each.type}</li>`;
+    ulPointer.innerHTML += `<li >${each.fuel ?? "Ikke opgivet"}</li>`;
     ulPointer.innerHTML += `<li>${each.passengers}</li>`;
-    ulPointer.innerHTML += `<li>${each.stops !== undefined ? each.stops : "Ikke opgivet"}</li>`;
-    ulPointer.innerHTML += `<li>${each.ownedBy !== undefined ? each.ownedBy : "Ikke opgivet"}</li>`;
+    ulPointer.innerHTML += `<li>${each.stops ?? "Ikke opgivet"}</li>`;
+    ulPointer.innerHTML += `<li>${each.ownedBy ?? "Ikke opgivet"}</li>`;
     ulPointer.innerHTML += `<li>${each.isElectric === true ? "Ja" : "Nej"}</li>`;
     ulPointer.innerHTML += `<li>${each.isTandem === true ? "Ja" : "Nej"}</li>`;
   });
@@ -44,15 +37,19 @@ function showTheseVehicles(arr) {
 function filterButtens(evt) {
   if (evt.target.dataset.filter === "electric") {
     ulPointer.innerHTML = "";
+    const electric = vehicles.filter((vehicle) => vehicle.isElectric);
     showTheseVehicles(electric);
   } else if (evt.target.dataset.filter === "twoseats") {
     ulPointer.innerHTML = "";
+    const twoseats = vehicles.filter((vehicle) => vehicle.passengers > 1);
     showTheseVehicles(twoseats);
   } else if (evt.target.dataset.filter === "electricaljonas") {
     ulPointer.innerHTML = "";
+    const electricaljonas = vehicles.filter((vehicle) => vehicle.isElectric && vehicle.ownedBy === "Jonas");
     showTheseVehicles(electricaljonas);
   } else if (evt.target.dataset.filter === "rugbrod") {
     ulPointer.innerHTML = "";
+    const rugbrod = vehicles.filter((vehicle) => vehicle.fuel === "Rugbrød" && vehicle.passengers > 1);
     showTheseVehicles(rugbrod);
   } else {
     ulPointer.innerHTML = "";
