@@ -12,7 +12,7 @@ function makeBars() {
   list.appendChild(li);
   myArray.push(randnum);
 
-  if (myArray.length - 1 > 19) {
+  if (myArray.length > 20) {
     list.removeChild(list.firstElementChild);
     myArray.shift();
   }
