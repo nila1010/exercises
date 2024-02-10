@@ -19,15 +19,11 @@ function checkReplacement() {
 }
 
 function replaceWords() {
-  curseWords.forEach((word) => {
-    if (word.bad && word.good) {
-      const replaced = text.textContent.replace(word.bad, word.good);
-      text.textContent = replaced;
-    } else {
-      ord = word.bad.substring();
-    }
-    checkReplacement();
-  });
+  const replaced = text.textContent.replace(curseWords.bad, curseWords.good);
+  text.textContent = replaced;
+  console.log(replaced);
+  console.log(curseWords.bad, curseWords.good);
 }
 
 btn.addEventListener("click", replaceWords);
+console.log(curseWords.bad);
