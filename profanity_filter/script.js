@@ -21,7 +21,7 @@ function checkReplacement() {
 function replaceWords() {
   curseWords.forEach((word) => {
     if (word.bad && word.good) {
-      const replaced = text.textContent.replace(word.bad, word.good);
+      const replaced = text.textContent.replaceAll(word.bad, word.good);
       text.textContent = replaced;
     } else {
       ord = word.bad.substring();
