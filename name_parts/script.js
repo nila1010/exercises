@@ -9,6 +9,6 @@ console.log(firstName, middleName, lastName);
 const personSplit = person.split(" ");
 const personSplitFirstName = personSplit[0];
 const personSplitMiddleName = personSplit[1];
-const personSplitLastName = personSplit[2];
+const personSplitLastName = personSplit[personSplit.length - 1];
 
 console.log(personSplitFirstName, personSplitMiddleName, personSplitLastName);
