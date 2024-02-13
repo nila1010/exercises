@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Animals (basic)</title>
+</head>
+
+<body>
+    <h1>Animals - basic</h1>
+    <button data-filter="cats" type="button">Only cats</button><button data-filter="dogs" type="button">Only
+        dogs</button><button data-filter="all" type="button">Show all</button>
+    <ul>
+        <li class="sort" data-sort="sortname"><strong>Name</strong></li>
+        <li class="sort" data-sort="sortage"><strong>Age</strong></li>
+        <li class="sort" data-sort="sortdesc"><strong>Desc</strong></li>
+        <li class="sort" data-sort="sorttype"><strong>Type</strong></li>
+    </ul>
+    <div id="list">
+
+        <!-- animal template will be cloned and inserted here -->
+    </div>
+
+    <template id="animal">
+        <ul>
+            <li data-field="name">XX</li>
+            <li data-field="age">YY</li>
+            <li data-field="decs">VV</li>
+            <li data-field="type">TT</li>
+        </ul>
+    </template>
+
+    <script src="animals_basic.js"></script>
+</body>
+
+</html>
