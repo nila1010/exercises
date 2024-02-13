@@ -1,0 +1,43 @@
+/* Slippe for den grimme(?) blå focus på knappen  */
+:root {
+  --bg-color: orange;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* centrering */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+}
+
+select {
+  background-color: chocolate;
+  font-size: 3rem;
+  color: white;
+}
+
+.ani {
+  animation-iteration-count: 1;
+
+  animation-name: ani;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ani {
+  to {
+    background-color: var(--bg-color);
+  }
+}
