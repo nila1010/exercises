@@ -11,13 +11,13 @@
 
 <body>
     <h1>Animals - basic</h1>
-    <button data-filter="cats" type="button">Only cats</button><button data-filter="dogs" type="button">Only
-        dogs</button><button data-filter="all" type="button">Show all</button>
+    <button data-filter="cat" type="button">Only cats</button><button data-filter="dog" type="button">Only
+        dogs</button><button data-filter="*" type="button">Show all</button>
     <ul>
-        <li class="sort" data-sort="sortname"><strong>Name</strong></li>
-        <li class="sort" data-sort="sortage"><strong>Age</strong></li>
-        <li class="sort" data-sort="sortdesc"><strong>Desc</strong></li>
-        <li class="sort" data-sort="sorttype"><strong>Type</strong></li>
+        <li class="sort" data-order="asc" data-sort="name"><strong>Name</strong></li>
+        <li class="sort" data-order="asc" data-sort="age"><strong>Age</strong></li>
+        <li class="sort" data-order="asc" data-sort="desc"><strong>Desc</strong></li>
+        <li class="sort" data-order="asc" data-sort="type"><strong>Type</strong></li>
     </ul>
     <div id="list">
 
