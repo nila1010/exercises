@@ -48,7 +48,7 @@ function makeNewArray() {
   animals.forEach((animal) => {
     const animalSplit = animal.fullname.split(" ");
 
-    let newAnimal = [];
+    let newAnimal = {};
     newAnimal.name = animalSplit[0];
     newAnimal.desc = animalSplit[animalSplit.length - 2];
     newAnimal.type = animalSplit[animalSplit.length - 1];
