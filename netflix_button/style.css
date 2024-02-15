@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+.container {
+  position: relative;
+  width: fit-content;
+  background-color: rgba(220, 220, 220, 0.395);
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  padding: 15px 40px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+p {
+  z-index: 10;
+}
+.inner {
+  transform-origin: 0;
+  position: absolute;
+  scale: 0 1;
+  inset: 0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.animation {
+  animation-name: ani;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes ani {
+  100% {
+    scale: 1 1;
+  }
+}
