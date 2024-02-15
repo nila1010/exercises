@@ -10,10 +10,13 @@
 </head>
 
 <body>
+    <span class="star">&star;</span>
+    <span class="star">&starf;</span>
     <h1>Animals - basic</h1>
     <button data-filter="cat" type="button">Only cats</button><button data-filter="dog" type="button">Only
         dogs</button><button data-filter="*" type="button">Show all</button>
     <ul>
+        <li class="sort" data-order="asc" data-sort="star"><strong>&starf;</strong></li>
         <li class="sort" data-order="asc" data-sort="name"><strong>Name</strong></li>
         <li class="sort" data-order="asc" data-sort="age"><strong>Age</strong></li>
         <li class="sort" data-order="asc" data-sort="desc"><strong>Desc</strong></li>
@@ -26,6 +29,7 @@
 
     <template id="animal">
         <ul>
+            <li class="star" data-field="star">XX</li>
             <li data-field="name">XX</li>
             <li data-field="age">YY</li>
             <li data-field="decs">VV</li>

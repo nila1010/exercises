@@ -1,0 +1,4 @@
+body {
+  height: 100vh;
+  background-color: hsl(50, var(--y), var(--x));
+}
