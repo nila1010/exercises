@@ -1,0 +1,45 @@
+:root {
+  --value: 000000;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: color-mix(in hsl, red, green calc(var(--value) * 1%));
+}
+
+.left,
+.right {
+  position: absolute;
+  inset: 120px 140px;
+  transform: rotate(11deg);
+  width: 10px;
+  height: 500px;
+  background-color: color-mix(in hsl, red, green calc(var(--value) * 1%));
+}
+
+.left {
+  transform: rotate(-10deg);
+  inset: 120px 46px;
+}
+
+.container {
+  position: relative;
+  width: fit-content;
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: last baseline;
+  height: 80vh;
+}
