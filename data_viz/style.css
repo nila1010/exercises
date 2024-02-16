@@ -9,21 +9,6 @@
   background-color: color-mix(in hsl, red, green calc(var(--value) * 1%));
 }
 
-.left,
-.right {
-  position: absolute;
-  inset: 120px 140px;
-  transform: rotate(11deg);
-  width: 10px;
-  height: 500px;
-  background-color: color-mix(in hsl, red, green calc(var(--value) * 1%));
-}
-
-.left {
-  transform: rotate(-10deg);
-  inset: 120px 46px;
-}
-
 .container {
   position: relative;
   width: fit-content;
@@ -42,4 +27,22 @@ section {
   justify-content: center;
   align-items: last baseline;
   height: 80vh;
+}
+
+.tring {
+  position: absolute;
+  inset: 111px 0;
+  transform: rotate(180deg);
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 400px solid color-mix(in hsl, red, green calc(var(--value) * 1%));
+}
+
+.smallcircle {
+  position: absolute;
+  inset: 68px 92px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
 }
