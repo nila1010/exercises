@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+    <main>
+        <section>
+            <article data-view="todo">
+                <h2 id="active">Planlagte opgaver</h2>
+                <h2 id="todocount">2</h2>
+                <div class="todoopgaver inputfield"><label for="task">
+                        <input type="text" name="task" id="input" placeholder="Skriv din opgave her">
+                    </label>
+                    <button id="addbtn" type="button">+</button>
+                </div>
+            </article>
+            <article data-view="done">
+                <h2>Færdige opgaver</h2>
+                <h2 id="donecount"></h2>
+            </article>
+        </section>
+        <template>
+            <div class="todoopgaver">
+                <label for="check">
+                    <input type="checkbox" name="check" id="">
+                </label>
+                <p>Her kommer der til at stå noget tekst</p>
+                <button type="button">-</button>
+            </div>
+        </template>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

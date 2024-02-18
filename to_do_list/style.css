@@ -1,0 +1,261 @@
+:root {
+  /* Color styles */
+  --background-done: #e4ffe1;
+  --background-todo: #f4fdd9;
+  --remove-btn: #fa5c5c;
+  --hover: #89cff0;
+
+  /* Text-size styles */
+  --h1: 60px;
+  --h2: 30px;
+  --copy: 20px;
+  --h1-small: 40px;
+  --h2-small: 20px;
+  --copy-small: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "robotto", Arial, Helvetica, sans-serif;
+  background: rgb(238, 174, 202);
+  background: linear-gradient(176deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+h2:hover {
+  scale: 1.05;
+}
+
+p {
+  font-size: var(--copy);
+}
+
+section {
+  --view: 650px 100px;
+  display: grid;
+  grid-template-columns: var(--view);
+  justify-content: center;
+  transition: all 0.3s ease-in;
+}
+
+article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 1px 16px 25px 0px rgba(0, 0, 0, 0.74);
+}
+
+section article:first-child {
+  background-color: var(--background-todo);
+}
+
+section article:first-child h2 {
+  writing-mode: vertical-rl;
+  margin: 0 20px;
+}
+section article:last-child {
+  background-color: var(--background-done);
+}
+
+section article:last-child h2 {
+  writing-mode: vertical-rl;
+  margin: 0 20px;
+}
+
+div {
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+input {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+button {
+  background-color: var(--remove-btn);
+  padding: 7px 30px;
+  border-radius: 15px;
+  border-style: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+}
+
+#active {
+  cursor: auto;
+  text-align: right;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin: 0;
+  writing-mode: unset;
+}
+#active:hover {
+  scale: 1;
+}
+
+.inputfield {
+  justify-content: space-between;
+}
+
+.inputfield input {
+  font-size: 15px;
+  padding: 10px;
+  width: 380px;
+  height: 50px;
+  border-radius: 15px;
+  border-style: none;
+  border: 1px solid black;
+  cursor: text;
+}
+.inputfield input:focus::placeholder {
+  opacity: 0;
+}
+
+.inputfield button {
+  background-color: #337357;
+}
+
+.error input {
+  border: 2px solid #fa5c5c;
+}
+.error input::placeholder {
+  color: #fa5c5c;
+}
+.doneopgaver {
+  --show: none;
+  display: var(--show);
+}
+
+.todoopgaver {
+  --show: flex;
+  display: var(--show);
+}
+
+#donecount {
+  position: absolute;
+  writing-mode: unset;
+  inset: 5px 48px;
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 3px 7px;
+  width: fit-content;
+  height: fit-content;
+}
+#todocount {
+  display: none;
+  position: absolute;
+  writing-mode: unset;
+  inset: 5px 48px;
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 3px 7px;
+  width: fit-content;
+  height: fit-content;
+}
+
+@media (max-width: 770px) {
+  * {
+    border: 1px solid hotpink;
+  }
+  h1 {
+    font-size: var(--h1-small);
+  }
+
+  h2 {
+    font-size: var(--h2-small);
+    cursor: pointer;
+  }
+
+  p {
+    font-size: var(--copy-small);
+  }
+
+  section {
+    --view: 1fr;
+  }
+  section article:last-child h2 {
+    writing-mode: unset;
+  }
+  section article:first-child h2 {
+    writing-mode: unset;
+  }
+
+  article {
+    padding: 10px 30px;
+  }
+
+  button {
+    padding: 10px 30px;
+    border-radius: 15px;
+
+    font-size: 15px;
+  }
+
+  #donecount {
+    inset: 8px -10px;
+  }
+  #todocount {
+    inset: 8px -10px;
+  }
+}
+
+@media (max-width: 610px) {
+  article {
+    padding: 10px 20px;
+  }
+  input {
+    height: 20px;
+    width: 20px;
+  }
+  .inputfield input {
+    width: 100%;
+  }
+}
+
+/* 
+Knapper størrelse og placering af indhold
+Form Lable får "fejl" i browser men det virker når man tapper rundt
+*/
