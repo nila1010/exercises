@@ -118,13 +118,6 @@ button {
   cursor: pointer;
 }
 
-img {
-  width: 100%;
-}
-
-img:hover {
-}
-
 button:hover {
   color: white;
 }
