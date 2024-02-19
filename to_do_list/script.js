@@ -154,20 +154,22 @@ function removeTask(id) {
 //--------------Task Checked-------------------//
 
 function changeList(task) {
-  if ($(`#check${task.id}`).checked) {
-    task.checked = true;
-    $(`#task${task.id}`).classList = "doneopgaver";
-    $(`#task${task.id}`).style.setProperty("--show", "none");
-    $("[data-view=done]").append($(`#task${task.id}`));
-    setLocalstorageItem();
-  } else {
-    task.checked = false;
-    $(`#task${task.id}`).classList = "todoopgaver";
-    $(`#task${task.id}`).style.setProperty("--show", "none");
-    $("[data-view=todo]").append($(`#task${task.id}`));
-    setLocalstorageItem();
-  }
-  changeCount();
+  setTimeout(() => {
+    if ($(`#check${task.id}`).checked) {
+      task.checked = true;
+      $(`#task${task.id}`).classList = "doneopgaver";
+      $(`#task${task.id}`).style.setProperty("--show", "none");
+      $("[data-view=done]").append($(`#task${task.id}`));
+      setLocalstorageItem();
+    } else {
+      task.checked = false;
+      $(`#task${task.id}`).classList = "todoopgaver";
+      $(`#task${task.id}`).style.setProperty("--show", "none");
+      $("[data-view=todo]").append($(`#task${task.id}`));
+      setLocalstorageItem();
+    }
+    changeCount();
+  }, 500);
 }
 
 //--------------Count-------------------//
