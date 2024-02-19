@@ -48,7 +48,7 @@ function setLocalstorageItem() {
 //--------------Change View--------------------//
 
 function changeView(evt) {
-  if (evt.currentTarget.dataset.view === "done") {
+  if (evt.target.parentElement.dataset.view === "done") {
     $("section").style.setProperty("--view", "100px 650px");
     $("section article:last-child h2").id = "active";
     $("section article:first-child h2").id = "";
@@ -75,7 +75,7 @@ function changeView(evt) {
   }
 }
 
-$$("article").forEach((art) => {
+$$("h2").forEach((art) => {
   art.addEventListener("click", changeView);
 });
 
