@@ -109,6 +109,10 @@ input {
   cursor: pointer;
 }
 
+input:checked {
+  accent-color: #337357;
+}
+
 button {
   background-color: var(--remove-btn);
   padding: 7px 30px;
