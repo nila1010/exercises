@@ -28,6 +28,12 @@ addEventListener("load", () => {
       clone.querySelector("input").addEventListener("change", () => {
         changeList(task);
       });
+
+      //addEventListener to editTekst
+      clone.querySelector("p").addEventListener("click", () => {
+        editTask(task);
+      });
+
       if (task.checked) {
         clone.querySelector("div").classList = "doneopgaver";
         clone.querySelector("input").checked = "checked";
@@ -130,7 +136,16 @@ function addTask(task) {
   clone.querySelector("input").addEventListener("change", () => {
     changeList(task);
   });
+
+  //addEventListener to editTekst
+  clone.querySelector("p").addEventListener("click", () => {
+    editTask(task);
+  });
+
+  //Append content
   $("[data-view=todo]").append(clone);
+
+  //Run count
   changeCount();
 }
 
@@ -139,16 +154,20 @@ $("#addbtn").addEventListener("click", addToArray);
 //--------------Remove Tasks-------------------//
 
 function removeTask(id) {
-  if ($(`#check${id}`).checked) {
-    $("[data-view=done]").removeChild($(`#task${id}`));
-    myTasks = myTasks.filter((task) => task.id !== id);
-    setLocalstorageItem();
-  } else {
-    $("[data-view=todo]").removeChild($(`#task${id}`));
-    myTasks = myTasks.filter((task) => task.id !== id);
-    setLocalstorageItem();
-    changeCount();
-  }
+  $(`#task${id}`).style.backgroundColor = "#EF8683";
+  $(`#task${id}`).style.borderRadius = "15px";
+  setTimeout(() => {
+    if ($(`#check${id}`).checked) {
+      $("[data-view=done]").removeChild($(`#task${id}`));
+      myTasks = myTasks.filter((task) => task.id !== id);
+      setLocalstorageItem();
+    } else {
+      $("[data-view=todo]").removeChild($(`#task${id}`));
+      myTasks = myTasks.filter((task) => task.id !== id);
+      setLocalstorageItem();
+      changeCount();
+    }
+  }, 500);
 }
 
 //--------------Task Checked-------------------//
@@ -181,4 +200,38 @@ function changeCount() {
   const countTodoFilter = myTasks.filter((task) => task.checked === false);
   countTodo = countTodoFilter.length;
   $("#todocount").textContent = countTodo;
+}
+
+//--------------Edit Task-------------------//
+
+function editTask(task) {
+  const taskElement = $(`#task${task.id}`);
+  const taskTextElement = taskElement.querySelector("p");
+
+  if (!task.checked) {
+    // Her bliver det lavet et nyt inputfeld
+    const inputField = document.createElement("input");
+    inputField.type = "text";
+    inputField.classList = "inputchange";
+    inputField.value = taskTextElement.textContent;
+
+    taskTextElement.replaceWith(inputField);
+
+    // Sætter curseren inde i input
+    inputField.focus();
+
+    inputField.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        endEditing(inputField, task, taskTextElement);
+      }
+    });
+  }
+}
+
+function endEditing(inputField, task, taskTextElement) {
+  task.task = inputField.value;
+  taskTextElement.textContent = inputField.value;
+  inputField.replaceWith(taskTextElement);
+
+  setLocalstorageItem();
 }
