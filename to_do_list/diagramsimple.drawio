@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="aX852rKXFX2CTn2feCTL" name="Page-1">
+        <mxGraphModel dx="1384" dy="1256" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="8" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Add eventListener addToArray" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="479" y="30" width="190" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Function addToArray(&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Make object with&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;: todo = input from user&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:id = random no.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:checked = true/false&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Push object to array&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Function addTask(object)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="414" y="140" width="320" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;div style=&quot;line-height: 140%;&quot;&gt;Function addTask (object)(&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Get template and clone node&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Inset values from object to correct element)&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;AddEventListener removeTask(object.id)&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;AddEventListener changeList(Object)&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;AddEventListener editTask(Object)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="414" y="320" width="320" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;div style=&quot;line-height: 140%;&quot;&gt;Function removeTask(Object)(&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Filter array and find the id that match&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Remove from array&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Remove from DOM - removeChild)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="69.5" y="534" width="320" height="101" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;div style=&quot;line-height: 140%;&quot;&gt;Function changeList(Object)(&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Check if checked and append in done section&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;else append in todo section&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;set value in object to true or false)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="412.5" y="534" width="320" height="101" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;div style=&quot;line-height: 140%;&quot;&gt;Function editTask(Object)(&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;create input element&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;change p element to input&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;AddEventListener (enter)&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Change input back to p)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="758.5" y="535" width="320" height="101" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="14" target="15" parent="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Add eventListener windows load" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="935" y="30" width="190" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;div style=&quot;line-height: 140%;&quot;&gt;Get array from LocalStorage&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;ForEach (Object)(&lt;/div&gt;&lt;div style=&quot;line-height: 140%;&quot;&gt;Append content)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="870" y="140" width="320" height="140" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
