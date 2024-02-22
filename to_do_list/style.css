@@ -207,9 +207,6 @@ button:hover {
 }
 
 @media (max-width: 770px) {
-  * {
-    border: 1px solid hotpink;
-  }
   h1 {
     font-size: var(--h1-small);
   }
@@ -254,7 +251,11 @@ button:hover {
 
 @media (max-width: 610px) {
   article {
-    padding: 10px 20px;
+    padding: 10px 10px;
+    margin: 0 10px;
+  }
+  h2 {
+    padding-left: 10px;
   }
   input {
     height: 20px;

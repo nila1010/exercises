@@ -51,40 +51,6 @@ function setLocalstorageItem() {
   localStorage.setItem("todolist", JSON.stringify(myTasks));
 }
 
-//--------------Change View--------------------//
-
-function changeView(evt) {
-  if (evt.target.parentElement.dataset.view === "done") {
-    $("section").style.setProperty("--view", "100px 650px");
-    $("section article:last-child h2").id = "active";
-    $("section article:first-child h2").id = "";
-    $$(".todoopgaver").forEach((todo) => {
-      todo.style.setProperty("--show", "none");
-    });
-    $$(".doneopgaver").forEach((done) => {
-      done.style.setProperty("--show", "flex");
-    });
-    $("#donecount").style.display = "none";
-    $("#todocount").style.display = "block";
-  } else {
-    $("section").style.setProperty("--view", "650px 100px");
-    $("section article:last-child h2").id = "";
-    $("section article:first-child h2").id = "active";
-    $$(".todoopgaver").forEach((todo) => {
-      todo.style.setProperty("--show", "flex");
-    });
-    $$(".doneopgaver").forEach((done) => {
-      done.style.setProperty("--show", "none");
-    });
-    $("#donecount").style.display = "block";
-    $("#todocount").style.display = "none";
-  }
-}
-
-$$("h2").forEach((art) => {
-  art.addEventListener("click", changeView);
-});
-
 //--------------Add Tasks-------------------//
 
 function addToArray() {
@@ -235,3 +201,69 @@ function endEditing(inputField, task, taskTextElement) {
 
   setLocalstorageItem();
 }
+
+//--------------Change View--------------------//
+let checkWidth = window.matchMedia("(max-width: 770px)");
+let currentTab;
+checkWidth.addEventListener("change", () => {
+  if (checkWidth.matches) {
+    $("section").style.setProperty("--view", "1fr");
+  } else {
+    if (currentTab === "done") {
+      $("section").style.setProperty("--view", "100px 650px");
+      activeDone();
+    } else {
+      $("section").style.setProperty("--view", "650px 100px");
+      activeTodo();
+    }
+  }
+});
+
+function changeView(evt) {
+  currentTab = evt.target.parentElement.dataset.view;
+  if (evt.target.parentElement.dataset.view === "done") {
+    if (!checkWidth.matches) {
+      $("section").style.setProperty("--view", "100px 650px");
+    } else {
+      $("section").style.setProperty("--view", "1fr");
+    }
+    activeDone();
+  } else {
+    if (!checkWidth.matches) {
+      $("section").style.setProperty("--view", "650px 100px");
+    } else {
+      $("section").style.setProperty("--view", "1fr");
+    }
+    activeTodo();
+  }
+}
+
+function activeTodo() {
+  $("section article:last-child h2").id = "";
+  $("section article:first-child h2").id = "active";
+  $$(".todoopgaver").forEach((todo) => {
+    todo.style.setProperty("--show", "flex");
+  });
+  $$(".doneopgaver").forEach((done) => {
+    done.style.setProperty("--show", "none");
+  });
+  $("#donecount").style.display = "block";
+  $("#todocount").style.display = "none";
+}
+
+function activeDone() {
+  $("section article:last-child h2").id = "active";
+  $("section article:first-child h2").id = "";
+  $$(".todoopgaver").forEach((todo) => {
+    todo.style.setProperty("--show", "none");
+  });
+  $$(".doneopgaver").forEach((done) => {
+    done.style.setProperty("--show", "flex");
+  });
+  $("#donecount").style.display = "none";
+  $("#todocount").style.display = "block";
+}
+
+$$("h2").forEach((art) => {
+  art.addEventListener("click", changeView);
+});
